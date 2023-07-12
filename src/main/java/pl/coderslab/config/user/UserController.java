@@ -33,10 +33,12 @@ public class UserController {
 	@RequestMapping(value = "/saveUser", method = RequestMethod.POST)
 	public ModelAndView saveUser(@ModelAttribute User user) {
 		if (user.getId() == 0) {
-			userService.addUser(user);
+			// If user is new, encrypt the password before saving
+			user.setPassword(user.getPassword());
 		} else {
 			//userService.updateEmployee(user);
 		}
+		userService.addUser(user);
 		return new ModelAndView("redirect:/");
 	}
 
@@ -46,4 +48,21 @@ public class UserController {
 		model.setViewName("filter");
 		return model;
 	}
+
+//	public boolean login(String username, String password) {
+//		// Retrieve the user from the database based on the provided username
+//		User user = userDao.getUserByUsername(username);
+//
+//		if (user != null) {
+//			// Check if the entered password matches the stored hashed password
+//			if (user.checkPassword(password)) {
+//				// Password is correct, allow login
+//				return true;
+//			}
+//		}
+//
+//		// Password is incorrect or user not found
+//		return false;
+//	}
+
 }

@@ -1,5 +1,6 @@
 package pl.coderslab.config.user;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
@@ -64,9 +65,14 @@ public class User implements Serializable {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		// Hash the password using Bcrypt and store the hashed value
+		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+		this.password = hashedPassword;
 	}
-
+	public boolean checkPassword(String password) {
+		// Compare the provided password with the stored hashed password
+		return BCrypt.checkpw(password, this.password);
+	}
 	public boolean isAdmin() {
 		return admin;
 	}
