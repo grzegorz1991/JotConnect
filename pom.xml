@@ -8,29 +8,86 @@
     <artifactId>JotConnect</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <spring-framework.version>5.1.9.RELEASE</spring-framework.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>5.3.9</spring.version>
+        <hibernate.version>5.6.3.Final</hibernate.version>
+        <mysql.version>8.0.28</mysql.version>
+        <junit-version>4.13.1</junit-version>
+        <servlet-api-version>4.0.1</servlet-api-version>
+        <jsp-version>2.1</jsp-version>
+        <jstl-version>1.2</jstl-version>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring-framework.version}</version>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Hibernate 4 dependencies -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <!--MYSQL Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!-- Servlet and JSP -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <version>${servlet-api-version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- JSTL dependency -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.9.0.pr2</version>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl-version}</version>
+        </dependency>
+
+        <!-- JUnit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-version}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

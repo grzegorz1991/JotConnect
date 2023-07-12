@@ -36,7 +36,7 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                             </div>
-                            <p class="sign-up">Don't have an Account? <a href="#">Sign Up</a> or <a href="#">Continue as
+                            <p class="sign-up">Don't have an Account? <a href="/user">Sign Up</a> or <a href="#">Continue as
                                 Guest</a></p>
                         </form>
                     </div>
