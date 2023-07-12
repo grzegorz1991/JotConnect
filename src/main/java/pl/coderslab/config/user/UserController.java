@@ -4,9 +4,7 @@ import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -34,7 +32,8 @@ public class UserController {
 	public ModelAndView saveUser(@ModelAttribute User user) {
 		if (user.getId() == 0) {
 			// If user is new, encrypt the password before saving
-			user.setPassword(user.getPassword());
+			System.out.println(user.getPassword() + " saveUser.UserController getPassword");
+			userService.addUser(user);
 		} else {
 			//userService.updateEmployee(user);
 		}
@@ -48,21 +47,30 @@ public class UserController {
 		model.setViewName("filter");
 		return model;
 	}
+	@GetMapping("/login")
+	public String showLoginPage() {
+		return "login";
+	}
 
-//	public boolean login(String username, String password) {
-//		// Retrieve the user from the database based on the provided username
-//		User user = userDao.getUserByUsername(username);
-//
-//		if (user != null) {
-//			// Check if the entered password matches the stored hashed password
-//			if (user.checkPassword(password)) {
-//				// Password is correct, allow login
-//				return true;
-//			}
-//		}
-//
-//		// Password is incorrect or user not found
-//		return false;
-//	}
+
+	@PostMapping("/login")
+	public String login(@RequestParam("username") String username, @RequestParam("password") String password) {
+		System.out.println("Login attempt for" + username);
+		// Perform the login validation
+		if (userService.login(username, password)) {
+			System.out.println("gówno");
+			// Redirect to the home view
+			return "redirect:/home";
+		} else {
+			// Login failed, show an error message or redirect back to the login page
+			System.out.println("Login failed");
+			return "redirect:/login?error";
+		}
+	}
+	@RequestMapping("/home")
+	public String home() {
+		return "home";
+	}
+
 
 }

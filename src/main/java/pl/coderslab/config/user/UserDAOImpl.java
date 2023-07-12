@@ -1,6 +1,8 @@
 package pl.coderslab.config.user;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.coderslab.config.user.User;
@@ -23,5 +25,13 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
+
+	@Override
+	public User findByUsername(String username) {
+		Session session = sessionFactory.getCurrentSession();
+		Query<User> query = session.createQuery("FROM User WHERE username = :username", User.class);
+		query.setParameter("username", username);
+		return query.uniqueResult();
+	}
 
 }

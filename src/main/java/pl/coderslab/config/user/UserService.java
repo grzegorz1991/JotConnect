@@ -8,6 +8,6 @@ public interface UserService {
 	@Transactional
 	public void addUser(User employee);
 	@Transactional
-	public void login(User user);
+	boolean login(String username, String password);
 
 }

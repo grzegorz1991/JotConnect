@@ -8,6 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -22,7 +23,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("pl.coderslab")
+@ComponentScan({"pl.coderslab", "pl.coderslab.config.user"})
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
 public class AppConfig implements WebMvcConfigurer {
@@ -78,4 +79,9 @@ public class AppConfig implements WebMvcConfigurer {
         properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
         return properties;
     }
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 }

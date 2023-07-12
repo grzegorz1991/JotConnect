@@ -10,5 +10,7 @@ public interface UserDAO {
 
 	public void addUser(User employee);
 	public void login(User user);
+
+	User findByUsername(String username);
 	
 }
