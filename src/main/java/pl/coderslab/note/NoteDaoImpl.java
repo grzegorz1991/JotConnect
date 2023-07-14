@@ -1,29 +1,29 @@
-package pl.coderslab.dao;
+package pl.coderslab.note;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import pl.coderslab.entity.Catalog;
 
 @Repository
-public class CatalogDAO {
+public class NoteDaoImpl implements NoteDao{
 
     private final SessionFactory sessionFactory;
 
     @Autowired
-    public CatalogDAO(SessionFactory sessionFactory) {
+    public NoteDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
-    public void addCatalog(Catalog catalog) {
+    public void addNote(Note note) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(catalog);
+        session.save(note);
     }
 
-    public Catalog getCatalogById(Long id) {
+    public Note getNoteById(Long id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Catalog.class, id);
+        return session.get(Note.class, id);
     }
 
+    // Other methods as needed
 }

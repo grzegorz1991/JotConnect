@@ -1,5 +1,5 @@
-package pl.coderslab.entity;
-
+package pl.coderslab.catalog;
+import pl.coderslab.note.Note;
 import pl.coderslab.user.User;
 
 import javax.persistence.*;

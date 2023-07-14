@@ -1,5 +1,6 @@
-package pl.coderslab.entity;
+package pl.coderslab.note;
 
+import pl.coderslab.catalog.Catalog;
 import pl.coderslab.user.User;
 
 import javax.persistence.*;
@@ -30,7 +31,6 @@ public class Note {
     @JoinColumn(name = "catalog_id")
     private Catalog catalog;
 
-
     public Note(Long id, String text, boolean visibility, String password, String creationDate, String modificationDate, String author, String genre, User user, Catalog catalog) {
         this.id = id;
         this.text = text;
@@ -44,9 +44,14 @@ public class Note {
         this.catalog = catalog;
     }
 
+    public Note(String text) {
+        this.text = text;
+    }
+
     public Note() {
 
     }
+
 
     public Long getId() {
         return id;
@@ -126,14 +131,5 @@ public class Note {
 
     public void setCatalog(Catalog catalog) {
         this.catalog = catalog;
-    }
-
-    public String getVisibility() {
-        if(visibility){
-            return "visible";
-        }
-        else{
-            return "not-visible";
-        }
     }
 }
