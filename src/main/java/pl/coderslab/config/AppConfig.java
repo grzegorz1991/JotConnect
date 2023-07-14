@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,8 +24,9 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"pl.coderslab", "pl.coderslab.config.user"})
+@ComponentScan({"pl.coderslab", "pl.coderslab.config"})
 @EnableTransactionManagement
+@EnableJpaRepositories
 @PropertySource("classpath:application.properties")
 public class AppConfig implements WebMvcConfigurer {
 

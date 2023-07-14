@@ -14,15 +14,12 @@ public class UserDAOImpl implements UserDAO {
 
 	public void addUser(User user) {
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
-
 	}
 
 	@Override
 	public void login(User user) {
 		// TODO Auto-generated method stub
-		
 	}
-
 
 	@Override
 	public User findByUsername(String username) {
@@ -31,7 +28,6 @@ public class UserDAOImpl implements UserDAO {
 		query.setParameter("username", username);
 		return query.uniqueResult();
 	}
-
 
 	@Override
 	public User findByEmail(String email) {

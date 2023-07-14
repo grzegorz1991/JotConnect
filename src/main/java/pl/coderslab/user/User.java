@@ -3,17 +3,16 @@ package pl.coderslab.user;
 
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
+import pl.coderslab.entity.Catalog;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import java.util.List;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "users")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -34,8 +33,11 @@ public class User implements Serializable {
     @Column(name = "admin")
     private boolean admin;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Catalog> catalogs;
+
     public User() {
-        this.admin = false; // Set the admin field to false by default
+        this.admin = false;
     }
 
     public int getId() {
@@ -67,20 +69,15 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
-        // Create an instance of BCryptPasswordEncoder
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         System.out.println("User.class - password String = " + password);
-        // Hash the password using the password encoder
         String hashedPassword = passwordEncoder.encode(password);
         System.out.println("User.class - hashed password String = " + hashedPassword);
         this.password = hashedPassword;
     }
 
     public boolean checkPassword(String password) {
-        // Create an instance of BCryptPasswordEncoder
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
-        // Compare the provided password with the stored hashed password
         return passwordEncoder.matches(password, this.password);
     }
 
