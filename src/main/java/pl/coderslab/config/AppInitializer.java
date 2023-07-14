@@ -1,10 +1,9 @@
-package pl.coderslab;
+package pl.coderslab.config;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
@@ -27,4 +26,4 @@ public class AppInitializer implements WebApplicationInitializer {
         fr.setInitParameter("forceEncoding", "true");
         fr.addMappingForUrlPatterns(null, true, "/*");
     }
-    }
+}

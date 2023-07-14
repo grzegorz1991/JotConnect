@@ -31,35 +31,26 @@
                                     <input type="checkbox" class="form-check-input" id="rememberMe">
                                     <label class="form-check-label" for="rememberMe">Remember me</label>
                                 </div>
-                                <a href="#" class="forgot-pass">Forgot password</a>
+                                <a href="/construction" class="forgot-pass">Forgot password</a>
+
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                             </div>
-                            <p class="sign-up">Don't have an Account? <a href="#">Sign Up</a> or <a href="#">Continue as
+                            <p class="sign-up">Don't have an Account? <a href="/user">Sign Up</a> or <a href="/construction">Continue as
                                 Guest</a></p>
                         </form>
                     </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
         </div>
-        <!-- row ends -->
     </div>
-    <!-- page-body-wrapper ends -->
 </div>
-<!-- container-scroller -->
-<!-- plugins:js -->
 <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
-<!-- End plugin js for this page -->
-<!-- inject:js -->
 <script src="../../assets/js/off-canvas.js"></script>
 <script src="../../assets/js/hoverable-collapse.js"></script>
 <script src="../../assets/js/misc.js"></script>
 <script src="../../assets/js/settings.js"></script>
 <script src="../../assets/js/todolist.js"></script>
-<!-- endinject -->
 </body>
 </html>
