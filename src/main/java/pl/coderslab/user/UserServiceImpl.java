@@ -1,4 +1,4 @@
-package pl.coderslab.config.user;
+package pl.coderslab.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -32,5 +32,28 @@ public class UserServiceImpl implements UserService {
 			return passwordEncoder.matches(password, user.getPassword());
 		}
 		return false;
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		return userDao.findByUsername(username);
+	}
+
+	@Override
+	public boolean findByEmail(String email) {
+		return false;
+	}
+
+
+	@Override
+	public boolean isUsernameExists(String username) {
+		User user = userDao.findByUsername(username);
+		return user != null;
+	}
+
+	@Override
+	public boolean isEmailExists(String email) {
+		User user = userDao.findByEmail(email);
+		return user != null;
 	}
 }

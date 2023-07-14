@@ -31,12 +31,13 @@
                                     <input type="checkbox" class="form-check-input" id="rememberMe">
                                     <label class="form-check-label" for="rememberMe">Remember me</label>
                                 </div>
-                                <a href="#" class="forgot-pass">Forgot password</a>
+                                <a href="/construction" class="forgot-pass">Forgot password</a>
+
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                             </div>
-                            <p class="sign-up">Don't have an Account? <a href="/user">Sign Up</a> or <a href="#">Continue as
+                            <p class="sign-up">Don't have an Account? <a href="/user">Sign Up</a> or <a href="/construction">Continue as
                                 Guest</a></p>
                         </form>
                     </div>

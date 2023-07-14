@@ -1,4 +1,4 @@
-package pl.coderslab.config.user;
+package pl.coderslab.user;
 
 
 
