@@ -3,6 +3,7 @@ import pl.coderslab.note.Note;
 import pl.coderslab.user.User;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -27,6 +28,17 @@ public class Catalog {
 
     @OneToMany(mappedBy = "catalog", cascade = CascadeType.ALL)
     private List<Note> notes;
+
+    public Catalog(String name, User user) {
+        this.name = name;
+        this.creationDate = LocalDateTime.now().toString();
+        this.modificationDate = LocalDateTime.now().toString();
+        this.user = user;
+        this.parentCatalog = parentCatalog;
+        this.notes = notes;
+    }
+
+
 
     public Catalog(Long id, String name, String creationDate, String modificationDate, User user, Catalog parentCatalog, List<Note> notes) {
         this.id = id;

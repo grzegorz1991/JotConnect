@@ -11,7 +11,8 @@ public class IndexController {
     @RequestMapping("/")
 
     public String redirect() {
-        return "redirect:/mainPage";
+        System.out.println("Redirecting to main page");
+        return "redirect:/login";
     }
 
 }

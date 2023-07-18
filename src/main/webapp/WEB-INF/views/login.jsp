@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +18,7 @@
             <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
                 <div class="card col-lg-4 mx-auto">
                     <div class="card-body px-5 py-5">
-                        <h3 class="card-title text-left mb-3">JotConnect Login</h3>
+                        <h3 class="card-title text-left mb-3">JotConnect Loginn</h3>
                         <form action="/login" method="post">
                             <div class="form-group">
                                 <label>Username</label>
@@ -46,11 +48,16 @@
         </div>
     </div>
 </div>
-<script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
-<script src="../../assets/js/off-canvas.js"></script>
-<script src="../../assets/js/hoverable-collapse.js"></script>
-<script src="../../assets/js/misc.js"></script>
-<script src="../../assets/js/settings.js"></script>
-<script src="../../assets/js/todolist.js"></script>
+
+
+
+
+
+<script src="/static/vendors/js/vendor.bundle.base.js"></script>
+<script src="/static/js/off-canvas.js"></script>
+<script src="/static/assets/js/hoverable-collapse.js"></script>
+<script src="/static/assets/js/misc.js"></script>
+<script src="/static/assets/js/settings.js"></script>
+<script src="/static/assets/js/todolist.js"></script>
 </body>
 </html>
