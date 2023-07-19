@@ -5,7 +5,7 @@ package pl.coderslab.user;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
-import javax.xml.catalog.Catalog;
+
 import java.io.Serializable;
 
 import java.util.List;
@@ -32,20 +32,7 @@ public class User implements Serializable {
     @Column(name = "admin")
     private boolean admin;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Catalog> Catalogs;
 
-    public User() {
-        this.admin = false;
-    }
-
-    public List<Catalog> getCatalogs() {
-        return Catalogs;
-    }
-
-    public void setCatalogs(List<Catalog> catalogs) {
-        Catalogs = catalogs;
-    }
 
     public Long getId() {
         return id;
