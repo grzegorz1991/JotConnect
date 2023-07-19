@@ -9,6 +9,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
@@ -18,6 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import java.util.Properties;
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -47,40 +50,19 @@ public class AppConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-//    @Bean
-//    public DataSource dataSource() {
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName(environment.getProperty("database.driver"));
-//        dataSource.setUrl(environment.getProperty("database.url"));
-//        dataSource.setUsername(environment.getProperty("database.user"));
-//        dataSource.setPassword(environment.getProperty("database.password"));
-//        return dataSource;
-//    }
-//
-//    @Bean
-//    public LocalSessionFactoryBean sessionFactory() {
-//        LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
-//        sessionFactoryBean.setDataSource(dataSource());
-//        sessionFactoryBean.setPackagesToScan("pl.coderslab");
-//        sessionFactoryBean.setHibernateProperties(hibernateProperties());
-//        return sessionFactoryBean;
-//    }
-//
-//    @Bean
-//    public HibernateTransactionManager transactionManager() {
-//        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-//        transactionManager.setSessionFactory(sessionFactory().getObject());
-//        return transactionManager;
-//    }
-//
-//    private Properties hibernateProperties() {
-//        Properties properties = new Properties();
-//        properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
-//        properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
-//        properties.put("hibernate.format_sql", environment.getProperty("hibernate.format_sql"));
-//        properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
-//        return properties;
-//    }
+    @Bean
+    public LocalEntityManagerFactoryBean entityManagerFactory() {
+        LocalEntityManagerFactoryBean entityManagerFactoryBean
+                = new LocalEntityManagerFactoryBean();
+        entityManagerFactoryBean.setPersistenceUnitName("jay_connect_database");
+        return entityManagerFactoryBean;
+    }
+    @Bean
+    public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+        JpaTransactionManager jpaTransactionManager =
+                new JpaTransactionManager(entityManagerFactory);
+        return jpaTransactionManager;
+    }
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	   "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	   "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+	   <!-- Database connection settings -->
+	   <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	   <property name="connection.url">jdbc:mysql://localhost:3306/jay_connect_database</property>
+	   <property name="connection.username">root</property>
+	   <property name="connection.password">6SIC8lyskYSNClWe0bXi</property>
+
+	   <!-- SQL dialect -->
+	   <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+
+	   <!-- Echo all executed SQL to stdout -->
+	   <property name="show_sql">true</property>
+
+	   <!-- Names the annotated entity class -->
+	   <mapping class="pl.coderslab.user.User"/>
+
+    </session-factory>
+
+</hibernate-configuration>

@@ -3,11 +3,13 @@ package pl.coderslab.user;
 
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import pl.coderslab.directory.Directory;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,7 +22,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "user_name")
     private String username;
 
     @Column(name = "email")
@@ -32,7 +34,17 @@ public class User implements Serializable {
     @Column(name = "admin")
     private boolean admin;
 
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Directory> directories;
+    public User() {
+        directories = new ArrayList<>();
+    }
 
+    public User(String username, String email) {
+        this.username = username;
+        this.email = email;
+        directories = new ArrayList<>();
+    }
 
     public Long getId() {
         return id;
@@ -81,5 +93,23 @@ public class User implements Serializable {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public List<Directory> getDirectories() {
+        return directories;
+    }
+
+    public void setDirectories(List<Directory> directories) {
+        this.directories = directories;
+    }
+
+    public void addDirectory(Directory directory) {
+        directories.add(directory);
+        directory.setAuthor(this);
+    }
+
+    public void removeDirectory(Directory directory) {
+        directories.remove(directory);
+        directory.setAuthor(null);
     }
 }
