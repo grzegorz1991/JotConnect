@@ -62,22 +62,21 @@
                         <h3 class="card-title text-left mb-3">Terms And Conditions</h3>
                         <div class="container scrollable-container">
                             <p>
-                                <!-- Your long text here -->
-                            <h1>Terms and Conditions</h1>
+                            <h3>Terms and Conditions</h3>
                             <p>Welcome to our website! These terms and conditions outline the rules and regulations for the use of our website.</p>
 
                             <p>By accessing this website, we assume you accept these terms and conditions. Do not continue to use our website if you do not agree with all the terms and conditions stated on this page.</p>
 
-                            <h2>The following terminology applies to these Terms and Conditions, Privacy Statement, and Disclaimer Notice and all agreements:</h2>
+                            <h4>The following terminology applies to these Terms and Conditions, Privacy Statement, and Disclaimer Notice and all agreements:</h4>
                             <p>"Client," "You," and "Your" refers to you, the person accessing this website and accepting the Company's terms and conditions. "The Company," "Ourselves," "We," "Our," and "Us" refer to our Company. "Party," "Parties," or "Us" refers to both the Client and ourselves, or either the Client or ourselves.</p>
 
-                            <h2>Cookies</h2>
+                            <h4>Cookies</h4>
                             <p>We employ the use of cookies. By using our website, you consent to the use of cookies in accordance with our privacy policy. Most modern-day interactive websites use cookies to retrieve user details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.</p>
 
-                            <h2>License</h2>
+                            <h4>License</h4>
                             <p>Unless otherwise stated, we and/or our licensors own the intellectual property rights for all material on our website. All intellectual property rights are reserved. You may view and/or print pages from our website for your own personal use, subject to restrictions set in these terms and conditions.</p>
 
-                            <h2>You must not:</h2>
+                            <h4>You must not:</h4>
                             <ul>
                                 <li>Republish material from our website</li>
                                 <li>Sell, rent, or sub-license material from our website</li>
@@ -85,10 +84,10 @@
                                 <li>Redistribute content from our website</li>
                             </ul>
 
-                            <h2>Reservation of Rights</h2>
+                            <h4>Reservation of Rights</h4>
                             <p>We reserve the right to request that you remove all links or any particular link to our website. You approve to immediately remove all links to our website upon request. We also reserve the right to amend these terms and conditions and its linking policy at any time. By continuously linking to our website, you agree to be bound to and follow these linking terms and conditions.</p>
 
-                            <h2>Disclaimer</h2>
+                            <h4>Disclaimer</h4>
                             <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of this website. Nothing in this disclaimer will:</p>
                             <ul>
                                 <li>limit or exclude our or your liability for death or personal injury</li>

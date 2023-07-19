@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-public class PageController {
+public class UnderConstructionController {
 
 
     @RequestMapping("/construction")
@@ -14,11 +14,7 @@ public class PageController {
         return "construction";
     }
 
-    @RequestMapping("/termsAndConditions")
 
-    public String termsAndConditions() {
-        return "termsAndConditions";
-    }
 
 }
 

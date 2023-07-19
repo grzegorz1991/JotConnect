@@ -1,0 +1,14 @@
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JotConnect</title>
+    <link rel="stylesheet" href="/static/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/static/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="/static/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="shortcut icon" href="/static/images/JConn-Logo.png"/>
+</head>

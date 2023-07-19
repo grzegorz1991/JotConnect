@@ -1,18 +1,19 @@
-package pl.coderslab.controller;
+package pl.coderslab.main;
+
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-public class LoginController {
+public class MainPageController {
 
 
-    @RequestMapping("/")
+    @RequestMapping("/mainPage")
 
     public String redirect() {
-        return "redirect:/login";
+        return "mainPage";
     }
 
 }
-

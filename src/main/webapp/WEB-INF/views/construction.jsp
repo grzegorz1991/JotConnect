@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="/static/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="shortcut icon" href="/static/images/favicon.png"/>
+    <link rel="shortcut icon" href="/static/images/Jconn-Logo.png"/>
 </head>
 <body>
 <div class="container-scroller">
