@@ -49,4 +49,14 @@ public class DirectoryDaoImpl implements DirectoryDao {
         query.setParameter("parent", parentDirectory);
         return query.getResultList();
     }
+
+    @Override
+    public List<Directory> findDirectoriesByAuthorId(Long authorId) {
+        String jpql = "SELECT d FROM Directory d WHERE d.author.id = :authorId";
+        return entityManager.createQuery(jpql, Directory.class)
+                .setParameter("authorId", authorId)
+                .getResultList();
+    }
+
+
 }

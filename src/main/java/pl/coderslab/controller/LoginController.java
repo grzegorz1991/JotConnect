@@ -7,10 +7,12 @@ import org.springframework.web.servlet.ModelAndView;
 import pl.coderslab.directory.DirectoryDao;
 import pl.coderslab.dto.NameInfoDTO;
 import pl.coderslab.note.NoteDao;
+import pl.coderslab.user.User;
 import pl.coderslab.user.UserDao;
 import pl.coderslab.user.UserDaoImpl;
 import pl.coderslab.user.UserService;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -42,6 +44,14 @@ public class LoginController {
         if (userService.login(username, password)) {
             String userType =userDao.findByUsername(username).getUserType();
 
+            // Assuming you have a method to retrieve the user by username
+            User loggedInUser = userService.findByUsername(username);
+
+            // Set the loggedInUser attribute in the session
+            session.setAttribute("loggedInUser", loggedInUser);
+
+
+
             model.addAttribute("username", username);
             model.addAttribute("usertype", userType);
             return "mainPage";
@@ -53,9 +63,37 @@ public class LoginController {
 
     @RequestMapping("/guest")
     public String login(Model model, HttpSession session) {
-        String username = "Gest";
-        String userType ="GUEST";
-        model.addAttribute("usertype", userType);
+        String username = "Guest";
+        String userType =userDao.findByUsername(username).getUserType();
+
+        // Assuming you have a method to retrieve the user by username
+        User loggedInUser = userService.findByUsername(username);
+
+        // Set the loggedInUser attribute in the session
+        session.setAttribute("loggedInUser", loggedInUser);
+
+
+
         model.addAttribute("username", username);
+        model.addAttribute("usertype", userType);
         return "mainPage";
-}}
+
+}
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        // Get the current session (create a new one if it doesn't exist)
+        HttpSession session = request.getSession(false);
+
+        // If a session exists, invalidate it to clear all session attributes
+        if (session != null) {
+            session.invalidate();
+        }
+
+        // Redirect the user to the login page
+        return "redirect:/login";
+    }
+
+
+
+}

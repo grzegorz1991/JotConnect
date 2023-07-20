@@ -10,25 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13ce7c3e-d192-4b97-b0a4-1a5d77a4b8e9" name="Changes" comment="ok so now it is working">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/RegisterUserConrtoller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/TermsAndConditionsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/dto/NameInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/NoteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/SomePageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/DirectoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/DirectoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/Free_Sample_By_Wix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/RegisterUserConrtoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/RegisterUserConrtoller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/DirectoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/DirectoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/DirectoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/DirectoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createNote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createNote.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/AddNoteForm.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/AddNoteForm.jspf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainNavbarLeft.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainNavbarLeft.jspf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainNavbarTop.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainNavbarTop.jspf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +37,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -94,6 +93,7 @@
       <recent name="C:\Users\Lenovo\Documents\JAVA CODERSLAB\JotConnect\JotConnect\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Documents\JAVA CODERSLAB\JotConnect\JotConnect\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\Lenovo\Documents\JAVA CODERSLAB\JotConnect\JotConnect\src\main\resources\static\images" />
     </key>
   </component>
@@ -232,7 +232,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689765473697</updated>
       <workItem from="1689765474660" duration="1097000" />
-      <workItem from="1689772720995" duration="23046000" />
+      <workItem from="1689772720995" duration="32410000" />
     </task>
     <task id="LOCAL-00001" summary="ok so now it is working">
       <option name="closed" value="true" />
@@ -250,7 +250,23 @@
       <option name="project" value="LOCAL" />
       <updated>1689783519842</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ok so now it is working">
+      <option name="closed" value="true" />
+      <created>1689844544073</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689844544073</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ok so now it is working">
+      <option name="closed" value="true" />
+      <created>1689844560257</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689844560257</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

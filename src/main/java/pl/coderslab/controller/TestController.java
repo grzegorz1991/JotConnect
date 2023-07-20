@@ -49,7 +49,7 @@ public class TestController {
         note.setContent("Test Note Content");
         note.setTitle("Test note");
 
-        noteDao.save(note);
+        noteDao.saveNote(note);
 
         Note note2 = new Note();
         note2.setAuthor(user);
@@ -57,7 +57,7 @@ public class TestController {
         note2.setContent("Test Note2 Content");
         note2.setTitle("Test note2");
 
-        noteDao.save(note2);
+        noteDao.saveNote(note2);
 
         System.out.println(noteDao.getAllNotes());
 

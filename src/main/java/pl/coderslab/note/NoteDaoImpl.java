@@ -1,6 +1,7 @@
 package pl.coderslab.note;
 
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.coderslab.directory.Directory;
@@ -19,12 +20,12 @@ public class NoteDaoImpl implements NoteDao {
     private EntityManager entityManager;
 
     @Override
-    public Note findById(Long id) {
+    public Note findNoteById(Long id) {
         return entityManager.find(Note.class, id);
     }
 
     @Override
-    public void save(Note note) {
+    public void saveNote(Note note) {
         entityManager.persist(note);
     }
 
@@ -71,4 +72,5 @@ public class NoteDaoImpl implements NoteDao {
         query.setMaxResults(limit);
         return query.getResultList();
     }
+
 }

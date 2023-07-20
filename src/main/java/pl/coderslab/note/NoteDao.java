@@ -1,14 +1,17 @@
 package pl.coderslab.note;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import pl.coderslab.directory.Directory;
 import pl.coderslab.user.User;
 
 import java.util.List;
 
-public interface NoteDao {
-    Note findById(Long id);
+@Repository
+public interface NoteDao  {
+    Note findNoteById(Long id);
 
-    void save(Note note);
+    void saveNote(Note note);
 
     void update(Note note);
 

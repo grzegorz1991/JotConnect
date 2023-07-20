@@ -50,7 +50,7 @@ public class RegisterUserConrtoller {
         //
         userDao.saveUser(user);
         directoryDao.save(directory);
-        noteDao.save(note);
+        noteDao.saveNote(note);
 
         return "redirect:/login";
     }
