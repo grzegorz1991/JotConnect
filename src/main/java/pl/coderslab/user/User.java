@@ -1,14 +1,9 @@
 package pl.coderslab.user;
 
-
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import pl.coderslab.directory.Directory;
-
 import javax.persistence.*;
-
 import java.io.Serializable;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +31,7 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Directory> directories;
+
     public User() {
         directories = new ArrayList<>();
     }
@@ -111,5 +107,24 @@ public class User implements Serializable {
     public void removeDirectory(Directory directory) {
         directories.remove(directory);
         directory.setAuthor(null);
+    }
+
+    public String getUserType(){
+
+        if(username != null){
+            if(getUsername().equals("Admin")){
+                return UserType.MASTER_ADMIN.toString();
+            }
+            else if(isAdmin()){
+                return UserType.ADMIN.toString();
+            }
+            else
+                return UserType.USER.toString();
+        }
+        else{
+            return UserType.GUEST.toString();
+        }
+
+
     }
 }

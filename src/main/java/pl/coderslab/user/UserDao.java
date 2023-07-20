@@ -1,21 +1,19 @@
 package pl.coderslab.user;
 
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 @Repository
 @Transactional
-public class UserDao {
+public interface UserDao {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    public void saveUser(User employee);
 
-    public void saveUser(User user){
-        entityManager.persist(user);
-    }
+    public void login(User user);
 
+    User findByUsername(String username);
+
+    User findByEmail(String email);
 
 }
