@@ -23,6 +23,7 @@ import java.util.Properties;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import pl.coderslab.RememberMeTokenManager;
 
 
 @Configuration
@@ -67,5 +68,8 @@ public class AppConfig implements WebMvcConfigurer {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
+    @Bean
+    public RememberMeTokenManager rememberMeTokenManager() {
+        return new RememberMeTokenManager();
+    }
 }
