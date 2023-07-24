@@ -1,41 +1,56 @@
-<h2>Note Table</h2>
-<table>
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
   <thead>
   <tr>
-    <th>Title</th>
-    <th>Author</th>
+    <th class="tg-0lax">sdfd</th>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">sdf</th>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax"></th>
   </tr>
   </thead>
-  <tbody id="noteTableBody">
-  <!-- The notes will be populated here -->
+  <tbody>
+  <tr>
+    <td class="tg-0lax">sdf</td>
+    <td class="tg-0lax">f</td>
+    <td class="tg-0lax">sdf</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">sd</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">sdf</td>
+    <td class="tg-0lax">sd</td>
+    <td class="tg-0lax">sdf</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">fs</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">df</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">sd</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">fs</td>
+    <td class="tg-0lax">dfs</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">sdf</td>
+    <td class="tg-0lax">df</td>
+    <td class="tg-0lax">dfs</td>
+    <td class="tg-0lax"></td>
+  </tr>
   </tbody>
 </table>
-<script>
-  console.log("notes table log!");
-</script>
-<script>
-  function fetchNotes() {
-    fetch("/notes")
-            .then(response => response.json())
-            .then(notes => {
-              const tableBody = document.getElementById("noteTableBody");
-              tableBody.innerHTML = "";
-
-              notes.forEach(note => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                        <td>${note.title}</td>
-                        <td>${note.author}</td>
-                    `;
-                tableBody.appendChild(row);
-              });
-            })
-            .catch(error => {
-              console.error("Error fetching notes:", error);
-            });
-  }
-
-  window.addEventListener("load", function () {
-    fetchNotes();
-  });
-</script>

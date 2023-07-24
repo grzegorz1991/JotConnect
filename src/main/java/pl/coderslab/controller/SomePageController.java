@@ -39,9 +39,15 @@ public class SomePageController {
     }
 
     @RequestMapping("/createNote")
-    public String redirect() {
-        System.out.println("Redirecting to main page");
+    public String redirectToNoteForm() {
+        System.out.println("Redirecting create Note");
         return "createNote";
+    }
+
+    @RequestMapping("/createDirectory")
+    public String redirectToDirectoryForm() {
+        System.out.println("Redirecting create Directory");
+        return "createDirectory";
     }
 
     @GetMapping("/createNote")
@@ -51,6 +57,16 @@ public class SomePageController {
         model.addAttribute("directories", userDirectories);
         return "createNote";
     }
+
+    @GetMapping("/createDirectory")
+    public String showCreateDirectoryForm(Model model, HttpSession session) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        List<Directory> userDirectories = directoryService.getDirectoriesByUserId(loggedInUser.getId());
+        model.addAttribute("directories", userDirectories);
+
+        return "createDirectory";
+    }
+
     @GetMapping("/hello")
     @ResponseBody
     public String hello(HttpSession session) {

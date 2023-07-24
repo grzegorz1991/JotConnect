@@ -71,7 +71,7 @@ public class LoginController {
             User user = userService.findByUsername(username);
             List<Note> userNotes = noteService.getUserNotes(user);
             System.out.println("User Notes: " + userNotes);
-            return "mainPageLog";
+            return "mainPage";
         } else {
             model.addAttribute("error", "Invalid username or password");
             return "redirect:/login";

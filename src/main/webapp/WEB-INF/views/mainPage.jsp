@@ -4,6 +4,7 @@
 <%@ include file="main/mainHeader.jspf" %>
 <body>
 <div class="container-scroller">
+  <script src="/js/mainPage.js"></script>
   <script>
     console.log("JavaScript code loaded!");
   </script>

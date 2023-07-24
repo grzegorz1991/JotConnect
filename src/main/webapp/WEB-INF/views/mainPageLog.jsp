@@ -3,6 +3,7 @@
 <head>
     <title>Main Page</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include any other necessary CSS stylesheets and JavaScript files here -->
 </head>
 <body>
 
@@ -18,6 +19,22 @@
     <!-- The notes will be populated here -->
     </tbody>
 </table>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
 
 <script>
     // Mock data of notes (replace this with your actual data)
@@ -41,6 +58,9 @@
             tableBody.appendChild(row);
         });
     }
+
+    // Log the notes array to the console
+    console.log("List of Notes:", notes);
 
     window.addEventListener("load", function () {
         populateTable();
