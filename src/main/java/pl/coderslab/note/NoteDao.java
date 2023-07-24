@@ -26,4 +26,8 @@ public interface NoteDao  {
     List<Note> searchNotesByKeyword(String keyword);
 
     List<Note> getRecentNotes(int limit);
+
+    List<Note> findByUser(User user);
+
+    void deleteById(Long id);
 }

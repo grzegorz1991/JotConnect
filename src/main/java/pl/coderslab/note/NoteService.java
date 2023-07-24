@@ -1,6 +1,19 @@
 package pl.coderslab.note;
 
+import pl.coderslab.user.User;
+
+import java.util.List;
+
+
 public interface NoteService {
+
     void save(Note note);
-    // Add other methods for CRUD operations or additional business logic related to notes
+
+    Note findById(Long id);
+
+    List<Note> getAllNotes();
+
+    List<Note> getUserNotes(User user);
+
+    void deleteById(Long id);
 }

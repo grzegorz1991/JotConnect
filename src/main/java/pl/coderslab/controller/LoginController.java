@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import pl.coderslab.RememberMeTokenManager;
 import pl.coderslab.directory.DirectoryDao;
 import pl.coderslab.dto.NameInfoDTO;
+import pl.coderslab.note.Note;
 import pl.coderslab.note.NoteDao;
+import pl.coderslab.note.NoteService;
 import pl.coderslab.user.User;
 import pl.coderslab.user.UserDao;
 import pl.coderslab.user.UserService;
@@ -15,6 +17,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
@@ -23,15 +26,18 @@ public class LoginController {
     private final UserDao userDao;
     private final DirectoryDao directoryDao;
     private final NoteDao noteDao;
+
+    private final NoteService noteService;
     private final UserService userService;
     private final HttpSession httpSession;
 
     private final RememberMeTokenManager rememberMeTokenManager;
 
-    public LoginController(UserDao userDao, DirectoryDao directoryDao, NoteDao noteDao, UserService userService, HttpSession httpSession, RememberMeTokenManager rememberMeTokenManager) {
+    public LoginController(UserDao userDao, DirectoryDao directoryDao, NoteDao noteDao, NoteService noteService, UserService userService, HttpSession httpSession, RememberMeTokenManager rememberMeTokenManager) {
         this.directoryDao = directoryDao;
         this.userDao = userDao;
         this.noteDao = noteDao;
+        this.noteService = noteService;
         this.userService = userService;
         this.httpSession = httpSession;
         this.rememberMeTokenManager = rememberMeTokenManager;
@@ -56,9 +62,16 @@ public class LoginController {
             String userType = userDao.findByUsername(username).getUserType();
             User loggedInUser = userService.findByUsername(username);
             session.setAttribute("loggedInUser", loggedInUser);
+            System.out.println(session.getAttribute("loggedInUser").toString() + " - logged user /login log");
+
+
+
             model.addAttribute("username", username);
             model.addAttribute("usertype", userType);
-            return "mainPage";
+            User user = userService.findByUsername(username);
+            List<Note> userNotes = noteService.getUserNotes(user);
+            System.out.println("User Notes: " + userNotes);
+            return "mainPageLog";
         } else {
             model.addAttribute("error", "Invalid username or password");
             return "redirect:/login";

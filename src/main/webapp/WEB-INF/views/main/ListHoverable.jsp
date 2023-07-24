@@ -1,53 +1,88 @@
-<div class="col-lg-6 grid-margin stretch-card">
-  <div class="card">
-    <div class="card-body">
-      <h4 class="card-title">Hoverable Table</h4>
-      <p class="card-description"> Add class <code>.table-hover</code>
-      </p>
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <thead>
-          <tr>
-            <th>User</th>
-            <th>Product</th>
-            <th>Sale</th>
-            <th>Status</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>Jacob</td>
-            <td>Photoshop</td>
-            <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td>
-            <td><label class="badge badge-danger">Pending</label></td>
-          </tr>
-          <tr>
-            <td>Messsy</td>
-            <td>Flash</td>
-            <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i></td>
-            <td><label class="badge badge-warning">In progress</label></td>
-          </tr>
-          <tr>
-            <td>John</td>
-            <td>Premier</td>
-            <td class="text-danger"> 35.00% <i class="mdi mdi-arrow-down"></i></td>
-            <td><label class="badge badge-info">Fixed</label></td>
-          </tr>
-          <tr>
-            <td>Peter</td>
-            <td>After effects</td>
-            <td class="text-success"> 82.00% <i class="mdi mdi-arrow-up"></i></td>
-            <td><label class="badge badge-success">Completed</label></td>
-          </tr>
-          <tr>
-            <td>Dave</td>
-            <td>53275535</td>
-            <td class="text-success"> 98.05% <i class="mdi mdi-arrow-up"></i></td>
-            <td><label class="badge badge-warning">In progress</label></td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+
+<!-- Add this section to display the user's notes -->
+<div class="container">
+  <h2>User Notes</h2>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Created Date</th>
+    </tr>
+    </thead>
+    <tbody id="notesTableBody">
+    <!-- The user's notes will be dynamically added here -->
+    </tbody>
+  </table>
 </div>
+<script>
+  // Function to fetch the user's notes and display them on the page
+  function displayUserNotes() {
+    fetch("/user/notes")
+            .then(response => response.json())
+            .then(notes => {
+              // Get the table body element
+              const tableBody = document.getElementById("notesTableBody");
+
+              // Clear the existing table rows
+              tableBody.innerHTML = "";
+
+              // Loop through the notes and create table rows for each note
+              notes.forEach(note => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+            <td>${note.title}</td>
+            <td>${note.content}</td>
+            <td>${note.createdDate}</td>
+          `;
+                tableBody.appendChild(row);
+              });
+            })
+            .catch(error => {
+              console.error("Error fetching user's notes:", error);
+            });
+  }
+
+  // Call the function to display the user's notes when the page loads
+  window.addEventListener("load", function() {
+    displayUserNotes();
+  });
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Notes</title>
+</head>
+<body>
+<h1>User Notes</h1>
+<div id="notesContainer"></div>
+
+<script>
+  // Function to fetch the user's notes and display them on the page
+  function displayUserNotes() {
+    fetch("/user/notes")
+            .then(response => response.json())
+            .then(notes => {
+              const notesContainer = document.getElementById("notesContainer");
+              if (notes.length === 0) {
+                notesContainer.innerHTML = "<p>No notes found for this user.</p>";
+              } else {
+                notesContainer.innerHTML = "<ul>";
+                notes.forEach(note => {
+                  notesContainer.innerHTML += `<li>Title: ${note.title}, Content: ${note.content}</li>`;
+                });
+                notesContainer.innerHTML += "</ul>";
+              }
+            })
+            .catch(error => {
+              console.error("Error fetching user's notes:", error);
+            });
+  }
+
+  // Call the function to display the user's notes when the page loads
+  window.addEventListener("load", function () {
+    displayUserNotes();
+  });
+</script>
+</body>
+</html>

@@ -73,4 +73,19 @@ public class NoteDaoImpl implements NoteDao {
         return query.getResultList();
     }
 
+    @Override
+    public List<Note> findByUser(User user) {
+        return entityManager.createQuery("SELECT n FROM Note n WHERE n.author = :user", Note.class)
+                .setParameter("user", user)
+                .getResultList();
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        Note note = entityManager.find(Note.class, id);
+        if (note != null) {
+            entityManager.remove(note);
+        }
+    }
+
 }

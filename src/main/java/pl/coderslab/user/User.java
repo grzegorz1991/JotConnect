@@ -29,7 +29,7 @@ public class User implements Serializable {
     @Column(name = "admin")
     private boolean admin;
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Directory> directories;
 
     public User() {

@@ -9,16 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13ce7c3e-d192-4b97-b0a4-1a5d77a4b8e9" name="Changes" comment="ok so now it is working">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/RememberMeTokenManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/ListHoverable.jsp" afterDir="false" />
+    <list default="true" id="13ce7c3e-d192-4b97-b0a4-1a5d77a4b8e9" name="Changes" comment="User can remember me things">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/filter/CustomAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/TESTNOTELIST.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainPageLog.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/notesTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eee12bb5-5bdd-47c0-a7a1-0e5cfb9669a3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eee12bb5-5bdd-47c0-a7a1-0e5cfb9669a3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/SomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/SomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/directory/Directory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/note/NoteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/ListHoverable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/ListHoverable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainHeader.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainHeader.jspf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainPanel.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/mainPanel.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainPage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +85,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
     "spring.configuration.checksum": "5fa722257205911c0a46242077d5d3ff",
     "vue.rearranger.settings.migration": "true"
   },
@@ -223,7 +239,9 @@
       <option name="presentableId" value="Default" />
       <updated>1689765473697</updated>
       <workItem from="1689765474660" duration="1097000" />
-      <workItem from="1689772720995" duration="35909000" />
+      <workItem from="1689772720995" duration="43071000" />
+      <workItem from="1690146229744" duration="844000" />
+      <workItem from="1690147123909" duration="10892000" />
     </task>
     <task id="LOCAL-00001" summary="ok so now it is working">
       <option name="closed" value="true" />
@@ -265,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689853642710</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="User can remember me things">
+      <option name="closed" value="true" />
+      <created>1689859448029</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689859448029</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +299,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ok so now it is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok so now it is working" />
+    <MESSAGE value="User can remember me things" />
+    <option name="LAST_COMMIT_MESSAGE" value="User can remember me things" />
   </component>
 </project>
